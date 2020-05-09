@@ -22,10 +22,10 @@ class Solution {
         if(coordinates == null ) return false;
         float currentSlope;
         float prevSlope;
-        prevSlope = (coordinates[1][0] - coordinates[0][0]) == 0 ? 0f : (coordinates[1][1] - coordinates[0][1]) /                       (coordinates[1][0] - coordinates[0][0]);
+        prevSlope = (coordinates[1][0] - coordinates[0][0]) == 0 ? 0f : (coordinates[1][1] - coordinates[0][1]) / (coordinates[1][0] - coordinates[0][0]);
         System.out.println(prevSlope);
         for(int i = 2; i < coordinates.length; i++){
-            currentSlope = (coordinates[i][0] - coordinates[i-1][0]) == 0 ? 0f : (float)(coordinates[i][1] -                                coordinates[i-1][1]) / (coordinates[i][0] - coordinates[i-1][0]);
+            currentSlope = (coordinates[i][0] - coordinates[i-1][0]) == 0 ? 0f : (float)(coordinates[i][1] - coordinates[i-1][1]) / (coordinates[i][0] - coordinates[i-1][0]);
             System.out.println(currentSlope);
             if(prevSlope != currentSlope){
                 System.out.println(currentSlope);
