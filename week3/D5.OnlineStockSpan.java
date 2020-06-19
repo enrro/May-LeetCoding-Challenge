@@ -32,6 +32,10 @@ There will be at most 10000 calls to StockSpanner.next per test case.
 There will be at most 150000 calls to StockSpanner.next across all test cases.
 The total time limit for this problem has been reduced by 75% for C++, and 50% for all other languages.
 */
+/**
+Apporach, Stack the values that are incomming as an additional data structure that hold the value of the stock as well as how many others have passed that are smaller than himself as values. 
+this way you can retrieve with ease how many before him where before as well as compare with the new current value.
+ */
 class StockSpanner {
     Stack<Stock> stack1;
 
@@ -46,10 +50,7 @@ class StockSpanner {
         int counter = 0;
         while(!stack1.isEmpty() && stack1.peek().svalue <= price){
             temp = stack1.pop();
-            if(temp.svalue <= price){
-                counter += temp.vbvalue;
-                //System.out.println(temp.svalue + ", " + counter);
-            }
+            counter += temp.vbvalue;
         }
         
         stack1.push(new Stock(price,counter));
@@ -59,7 +60,7 @@ class StockSpanner {
 
 class Stock{
     int svalue;
-    int vbvalue;
+    int vbvalue; //value before value.
     
     public Stock(){}
     public Stock(int svalue, int vbvalue){

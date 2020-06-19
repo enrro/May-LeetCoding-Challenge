@@ -39,6 +39,9 @@ Note that 'A' and 'a' are treated as two different characters.
 */
 
 class Solution {
+    // map the characters, 
+    // store the ordered characters 
+    // add characters to result
     public String frequencySort(String s) {
         HashMap<Character,Integer> hm = new HashMap<Character,Integer>();
         for(char c:s.toCharArray()){
